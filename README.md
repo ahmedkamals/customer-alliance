@@ -24,7 +24,7 @@ Please follow below steps for installation:
   * Configure `app\cofig\parameters.yml` with a database configurations.
   * Run the following command:
 
-        bin/console doctrine:datase:create
+        sh depoly.sh
 
 ### Tests
 

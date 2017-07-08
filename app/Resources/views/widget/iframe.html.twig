@@ -22,9 +22,9 @@
     </head>
 
     <body>
-        <strong>
-            {% if rating %}
-                {{ rating }}
+        <strong id="{{ uuid }}">
+            {% if rating > 0 %}
+                {{ '%d%%' | format(rating) }}
             {% else %}
                 No ratings found.
             {% endif %}

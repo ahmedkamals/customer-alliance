@@ -3,7 +3,7 @@
 namespace AppBundle\Service;
 
 use AppBundle\Entity\Rating;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * Class RatingManager
@@ -11,15 +11,15 @@ use Doctrine\ORM\EntityManager;
  */
 class RatingManager
 {
-    /** @var EntityManager  */
+    /** @var EntityManagerInterface  */
     private $entityManager;
 
     /**
      * Constructor
      *
-     * @param EntityManager $entityManager
+     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
@@ -49,6 +49,6 @@ class RatingManager
             }
         }
 
-        return $count > 0? round($sum / $count) : $sum;
+        return $sum > 0? round($sum / $count) : 0;
     }
 }

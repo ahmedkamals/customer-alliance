@@ -7,9 +7,13 @@ script_action:
     defaults: { _controller: AppBundle:Widget:script }
     requirements:
         methods: GET
+        # example 001442e5-dd05-11e3-93c8-d43d7eecedd2
+        uuid: "[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}"
 
 iframe_action:
     path:     /widget/iframe/{uuid}
     defaults: { _controller: AppBundle:Widget:iframe }
     requirements:
         methods: GET
+        # example 001442e5-dd05-11e3-93c8-d43d7eecedd2
+        uuid: "[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}"

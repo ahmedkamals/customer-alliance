@@ -45,7 +45,7 @@ class WidgetController extends Controller
         return $this->render('widget/iframe.html.twig',
             [
                 'uuid' => $uuid,
-                'rating' => sprintf('%d%%', $rating),
+                'rating' => $rating,
             ]
         );
     }

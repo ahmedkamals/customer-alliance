@@ -10,4 +10,20 @@ namespace AppBundle\Repository;
  */
 class RatingRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @param string $uuid
+     *
+     * @return int
+     */
+    public function getAverageRating(string $uuid): int
+    {
+        $score = $this->createQueryBuilder('r')
+            ->select("avg(r.score) as score_avg")
+            ->where('r.userId = :userId')
+            ->setParameter('userId', $uuid)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return round($score);
+    }
 }
