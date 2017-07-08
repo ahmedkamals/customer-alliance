@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Customer Alliance | Simple Test Task</title>
+        <meta name="description" content="Customer Alliance - Simple Test Task">
+        <meta name="author" content="Ahmed Kamal">
+        <style>
+            body{
+                background:blue repeat;
+                height:100%;
+                text-align:center;
+                width:80%;
+                padding-top:38%;
+            }
+            body>strong {
+                color:white;
+                font-weight:bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <strong>
+            {% if rating %}
+                {{ rating }}
+            {% else %}
+                No ratings found.
+            {% endif %}
+        </strong><!-- /#{{ uuid }} -->
+    </body>
+</html>

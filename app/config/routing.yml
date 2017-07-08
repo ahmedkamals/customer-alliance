@@ -1,0 +1,15 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+script_action:
+    path:     /widget/{uuid}
+    defaults: { _controller: AppBundle:Widget:script }
+    requirements:
+        methods: GET
+
+iframe_action:
+    path:     /widget/iframe/{uuid}
+    defaults: { _controller: AppBundle:Widget:iframe }
+    requirements:
+        methods: GET
