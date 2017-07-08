@@ -1,6 +1,6 @@
 Prerequisites
 ==============
-* **php7.1 + (dom, mbstring) extensions**
+* **php7.1 + (dom, mbstring, mysql) extensions**
 * **MySQL**
 * [**Composer**][1]
 
@@ -17,6 +17,7 @@ Please follow below steps for installation:
 
         php bin/console server:run
 
+  * Open file `web\test.html` to check how things work.
 
 ### Deployment
 

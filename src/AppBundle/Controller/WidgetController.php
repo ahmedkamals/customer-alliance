@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Service\RatingManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -39,10 +40,12 @@ class WidgetController extends Controller
      */
     public function iframeAction(string $uuid)
     {
+        $rating = $this->get(RatingManager::class)->getRating($uuid);
+
         return $this->render('widget/iframe.html.twig',
             [
                 'uuid' => $uuid,
-                'rating' => sprintf('%d%%', 59),
+                'rating' => sprintf('%d%%', $rating),
             ]
         );
     }
